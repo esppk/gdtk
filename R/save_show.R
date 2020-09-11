@@ -10,6 +10,7 @@
 #' @examples save_pic("pic.png")
 save_pic <- function(filename, height = 11.25){
 
+
   showtext::showtext_opts(dpi = 300)
   showtext::showtext_auto()
 
@@ -22,7 +23,7 @@ save_pic <- function(filename, height = 11.25){
 
 #' save and show ggplot output from rnotebook.
 #'
-#' @param pic_name name of the pic, no quote is needed.
+#' @param pic_name name of the pic, no quote is needed. if not provided, random name will be used
 #'
 #' @return nothing.
 #' @export
@@ -30,7 +31,15 @@ save_pic <- function(filename, height = 11.25){
 #' @examples save_show(pic.png)
 save_show <- function(pic_name) {
 
-  name <- rlang::enexpr(pic_name) %>% rlang::as_string()
+  if(rlang::is_missing(pic_name)){
+
+    name <- sample(letters, 4, replace = FALSE) %>% stringr::str_c(collapse = "") %>%
+      stringr::str_c(".png")
+  } else {
+
+    name <- rlang::enexpr(pic_name) %>% rlang::as_string()
+  }
+
   save_pic(name)
   knitr::include_graphics(name)
 }

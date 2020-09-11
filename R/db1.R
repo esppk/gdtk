@@ -11,3 +11,10 @@ db1 <- function(){
                    url = "mongodb+srv://saler:5al3r@cluster-opuen.mongodb.net/test?retryWrites=true&w=majority",
                    verbose = FALSE)
 }
+
+db2 <- function(){
+
+  mongolite::mongo(collection = "extra", db = "fundr",
+               url = "mongodb+srv://saler:5al3r@cluster-opuen.mongodb.net/test?retryWrites=true&w=majority",
+               verbose = FALSE)
+}

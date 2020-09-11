@@ -4,16 +4,18 @@
 \alias{save_tbl_pic}
 \title{Draw raster plot for the dataframe, used in notebook.}
 \usage{
-save_tbl_pic(df, file, title = "", source = "", note_size = 8)
+save_tbl_pic(df, file, title, source = "", title_just = 0, note_size = 8)
 }
 \arguments{
 \item{df}{table to draw picture}
 
-\item{file}{file name to save, support quotation}
+\item{file}{file name to save, support quotation, can be missing, random name will be used.}
 
 \item{title}{string, for title}
 
 \item{source}{source of the data to be shown at footnote}
+
+\item{title_just}{a number for just of title, 0 for left, -0.1 for center.}
 
 \item{note_size}{footnote size, adjust this in order to prevent cut off.}
 }

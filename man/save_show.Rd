@@ -7,7 +7,7 @@
 save_show(pic_name)
 }
 \arguments{
-\item{pic_name}{name of the pic, no quote is needed.}
+\item{pic_name}{name of the pic, no quote is needed. if not provided, random name will be used}
 }
 \value{
 nothing.
